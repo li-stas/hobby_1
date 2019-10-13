@@ -1,4 +1,6 @@
-package com.company.hobby;
+package com.company;
+import com.company.hobby.Hobby;
+
 import java.util.Scanner;
 
 public class Test {
