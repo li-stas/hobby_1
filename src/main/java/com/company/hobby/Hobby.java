@@ -1,70 +1,69 @@
 package com.company.hobby;
 
 public class Hobby {
-    private int  nInt;
-    private byte bByte; // возраст
-    private char cChar;
-    private short nShort;
+    private byte nDayBirthday;
+    private int  nMonthBirthday;     
+    private short nYearBirthday;
+    private char cSkiDifficulty; //Blue - light, red - simple,  black - for experts.
+    private float nDayDistance;
+    private double nTotalDistance;
     private long  nLong;
-    private double nDouble;
-    private float nFloat;
-    private boolean lboolean; // лыжы или доска
+    private boolean lboolean;
 
-    public int getnInt() {        return nInt;    }
-    public void setnInt(int nInt) {        this.nInt = nInt;    }
 
-    public byte getbByte() {        return bByte;    }
-    public void setbByte(byte bByte) {        this.bByte = bByte;    }
+    public int getnMonthBirthday() {        return nMonthBirthday;    }
+    public void setnMonthBirthday(int nMonthBirthday) {        this.nMonthBirthday = nMonthBirthday;    }
 
-    public char getcChar() {        return cChar;    }
-    public void setcChar(char cChar) {        this.cChar = cChar;    }
+    public byte getnDayBirthday() {        return nDayBirthday;    }
+    public void setnDayBirthday(byte nDayBirthday) {        this.nDayBirthday = nDayBirthday;    }
 
-    public short getnShort() {        return nShort;    }
-    public void setnShort(short nShort) {        this.nShort = nShort;    }
+    public char getcSkiDifficulty() {        return cSkiDifficulty;    }
+    public void setcSkiDifficulty(char cSkiDifficulty) {        this.cSkiDifficulty = cSkiDifficulty;    }
+
+    public short getnYearBirthday() {        return nYearBirthday;    }
+    public void setnYearBirthday(short nYearBirthday) {        this.nYearBirthday = nYearBirthday;    }
 
     public long getnLong() {        return nLong;    }
     public void setnLong(long nLong) {        this.nLong = nLong;    }
 
-    public double getnDouble() {        return nDouble;    }
-    public void setnDouble(double nDouble) {        this.nDouble = nDouble;    }
+    public double getnTotalDistance() {        return nTotalDistance;    }
+    public void setnTotalDistance(double nTotalDistance) {        this.nTotalDistance = nTotalDistance;    }
 
-    public float getnFloat() {        return nFloat;    }
-    public void setnFloat(float nFloat) {        this.nFloat = nFloat;    }
+    public float getnDayDistance() {        return nDayDistance;    }
+    public void setnDayDistance(float nDayDistance) {        this.nDayDistance = nDayDistance;    }
 
     public boolean isLboolean() {        return lboolean;    }
     public void setLboolean(boolean lboolean) {        this.lboolean = lboolean;    }
 
     //  конструктор
-    public Hobby( int  nInt, byte bByte, char cChar, short nShort, long  nLong, double nDouble, float nFloat, boolean lboolean)     {
-        this.nInt = nInt;
-        this.bByte = bByte;
-        this.cChar = cChar;
-        this.nShort = nShort;
+    /*public Hobby( int  nMonthBirthday, byte nDayBirthday, char cSkiDifficulty, short nYearBirthday,
+                  long  nLong, double nTotalDistance, float nDayDistance, boolean lboolean)     {
+        this.nMonthBirthday = nMonthBirthday;
+        this.nDayBirthday = nDayBirthday;
+        this.nYearBirthday = nYearBirthday;
+        this.cSkiDifficulty = cSkiDifficulty;
         this.nLong = nLong;
-        this.nDouble = nDouble;
-        this.nFloat = nFloat;
+        this.nTotalDistance = nTotalDistance;
+        this.nDayDistance = nDayDistance;
         this.lboolean = lboolean;
-    }
-    public Hobby()     {
-        /*
-        int nInt, int bByte, char cChar, int nShort, int nLong, int nDouble, int nFloat, boolean lboolean
-        this.nInt = nInt;
-        this.bByte = bByte;
-        this.cChar = cChar;
-        this.nShort = nShort;
-        this.nLong = nLong;
-        this.nDouble = nDouble;
-        this.nFloat = nFloat;
-        this.lboolean = lboolean; */
-    }
-    /*public String ShowThis(){
-        String str = String.format("nInt=%d, bByte=%d, cChar=%c, nShort=%d, nLong=%d, nDouble=%.3f, nFloat=%.2f, boolean=%s",
-                this.nInt,  this.bByte, this.cChar, this.nShort, this.nLong, this.nDouble, this.nFloat, this.lboolean ? "TRUE" : "FALSE" );
-        return str;
     }*/
+    public Hobby( short nYearBirthday, int  nMonthBirthday, byte nDayBirthday, char cSkiDifficulty)  {
+        this.nMonthBirthday = nMonthBirthday;
+        this.nDayBirthday = nDayBirthday;
+        this.nYearBirthday = nYearBirthday;
+        this.cSkiDifficulty = cSkiDifficulty;
+        this.nLong = 0;
+        this.nTotalDistance = 0;
+        this.nDayDistance = 0;
+        this.lboolean = false;
+    }
+    public Hobby()  {
+    }
+
     public String tellAboutHobby(){
-        String str = String.format("nInt=%d, bByte=%d, cChar=%c, nShort=%d, nLong=%d, nDouble=%.3f, nFloat=%.2f, boolean=%s",
-                nInt,  bByte, cChar, nShort, nLong, nDouble, nFloat, lboolean ? "TRUE" : "FALSE" );
+        String str = String.format(
+                "nYearBirthday=%d, nMonthBirthday=%d, nDayBirthday=%d, cSkiDifficulty=%c, nTotalDistance=%.3f, nDayDistance=%.2f, nLong=%d, boolean=%s",
+                    nYearBirthday,    nMonthBirthday,    nDayBirthday, cSkiDifficulty, nTotalDistance, nDayDistance, nLong, lboolean ? "TRUE" : "FALSE" );
         return str;
     }
 
