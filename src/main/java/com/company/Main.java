@@ -1,10 +1,11 @@
 package com.company;
 
 import com.company.hobby.Hobby;
+import com.company.hobby.SkiHobby;
 
 public class Main {
     public static void main( String[] args ) {
-        Hobby man1 = new Hobby();
+        SkiHobby man1 = new SkiHobby();
         man1.setnYearBirthday((short) 1968);
         man1.setnMonthBirthday(3);
         man1.setnDayBirthday((byte) 24);
@@ -16,7 +17,7 @@ public class Main {
 
         //Hobby man2 = new Hobby(20,(byte)21,'B',(short) 24,25,26,27,true);
         // Hobby( short nYearBirthday, int  nMonthBirthday, byte nDayBirthday, char cSkiDifficulty);
-        Hobby man2 = new Hobby( (short) 1997, (int) 9, (byte) 2, 'S');
+        Hobby man2 = new SkiHobby( (short) 1997, (int) 9, (byte) 2, 'S');
         Hobby aHb[] = {man1, man2};
 
         for ( Hobby oElem : aHb  ) {

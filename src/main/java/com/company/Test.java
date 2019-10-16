@@ -1,12 +1,14 @@
 package com.company;
+import com.company.hobby.FishHobby;
 import com.company.hobby.Hobby;
+import com.company.hobby.SkiHobby;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-
         System.out.println("Введите чз пробел  (год месяц день сложность_трасс[LSE] ) ГГГГ ММ ДД SkyDiff");
 
         short nYearBirthday = scan.nextShort();
@@ -15,10 +17,9 @@ public class Test {
         String sSkiDifficulty = scan.next();
 
         char cSkiDifficulty = sSkiDifficulty.charAt(0);
-        Hobby man3 = new Hobby( nYearBirthday, nMonthBirthday, nDayBirthday , cSkiDifficulty);
+        Hobby man3 = new SkiHobby(nYearBirthday, nMonthBirthday, nDayBirthday, cSkiDifficulty);
 
-
-        Hobby man1 = new Hobby();
+        SkiHobby man1 = new SkiHobby();
         man1.setnYearBirthday((short) 1968);
         man1.setnMonthBirthday(3);
         man1.setnDayBirthday((byte) 24);
@@ -29,11 +30,28 @@ public class Test {
         man1.setLboolean(false);
 
         // Hobby( short nYearBirthday, int  nMonthBirthday, byte nDayBirthday, char cSkiDifficulty);
-        Hobby man2 = new Hobby( (short) 1997, (int) 9, (byte) 2, 'S');
+        Hobby man2 = new FishHobby((short) 1997, (int) 9, (byte) 2, 15.100f, 56.400);
+
         Hobby aHb[] = {man1, man2, man3};
 
-        for ( Hobby oElem : aHb  ) {
-            System.out.println( oElem.tellAboutHobby() );
+        for (Hobby oElem : aHb) {
+            System.out.println(oElem.tellAboutHobby());
         }
     }
+    /**
+     * This method will add elements to an array and return the resulting array
+     * @param arr
+     * @param elements
+     * @return
+     */
+    /*
+    public static Object[] add(Object[] arr, Object... elements){
+        Object[] tempArr = new Object[arr.length+elements.length];
+        System.arraycopy(arr, 0, tempArr, 0, arr.length);
+
+        for(int i=0; i < elements.length; i++)
+            tempArr[arr.length+i] = elements[i];
+        return tempArr;
+        }
+     */
 }
