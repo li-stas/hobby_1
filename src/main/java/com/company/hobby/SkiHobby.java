@@ -1,5 +1,9 @@
 package com.company.hobby;
 
+import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+
 public class SkiHobby extends Hobby {
     private char cSkiDifficulty; //Blue - light, red - simple,  black - for experts.
     private float nDayDistance;
@@ -52,7 +56,53 @@ public class SkiHobby extends Hobby {
         super(nYearBirthday, nMonthBirthday, nDayBirthday );
         this.cSkiDifficulty = cSkiDifficulty;
     }
+    public SkiHobby(Scanner scan) throws InputMismatchException, NoSuchElementException {
+        super((short) 0, (int) 0, (byte) 0 );
 
+        String cLine = scan.nextLine();
+        String[] aLine = cLine.split(" ");
+        if (aLine.length != 4) {
+            throw new NoSuchElementException(); // количество элемнтов #4
+        }
+        short nYYYY;
+        try {
+            nYYYY = Short.parseShort(aLine[0]); //1
+        } catch (NumberFormatException e) {
+            nYYYY = 0;
+        }
+        int nMM;
+        try {
+            nMM = Integer.parseInt(aLine[1]); //2
+        } catch (NumberFormatException e) {
+            nMM = 0;
+        }
+        byte nDD;
+        try {
+            nDD = Byte.parseByte(aLine[2]); //3
+        } catch (NumberFormatException e) {
+            nDD = 0;
+        }
+        if (nYYYY != 0 & nMM != 0 & nDD != 0) {
+            //
+        } else {
+            throw new InputMismatchException();
+        }
+        if ( !(nYYYY >= 2019 - 100 & (nMM >=1 & nMM <=12) & (nDD >=1 & nDD<=31))) {
+            throw new InputMismatchException();
+        }
+        // sSkiDifficulty
+        String sSkiDifficulty = aLine[3]; //4
+        if ( sSkiDifficulty.length() != 1 ) {
+            throw new InputMismatchException();
+        }
+        if (!(sSkiDifficulty.contains("L") || sSkiDifficulty.contains("S") || sSkiDifficulty.contains("E"))) { // вторго = M || F
+            throw new InputMismatchException();
+        }
+        this.nMonthBirthday = nMM;
+        this.nDayBirthday = nDD;
+        this.nYearBirthday = nYYYY;
+        this.cSkiDifficulty = cSkiDifficulty;
+    }
 
     public String tellAboutHobby(){
         String str = String.format(

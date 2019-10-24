@@ -4,13 +4,15 @@ import com.company.hobby.Hobby;
 import com.company.hobby.SkiHobby;
 
 import java.util.Arrays;
+import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите чз пробел  (год месяц день сложность_трасс[LSE] ) ГГГГ ММ ДД SkyDiff");
-
+        /*
         short nYearBirthday = scan.nextShort();
         int nMonthBirthday = scan.nextInt();
         byte nDayBirthday = scan.nextByte();
@@ -18,6 +20,18 @@ public class Test {
 
         char cSkiDifficulty = sSkiDifficulty.charAt(0);
         Hobby man3 = new SkiHobby(nYearBirthday, nMonthBirthday, nDayBirthday, cSkiDifficulty);
+         */
+        Hobby man3 = new SkiHobby();
+        try {
+            man3 = new SkiHobby(scan);
+        } catch (InputMismatchException e) {
+            System.out.println("Введенные данные не соответвуют требованиям");
+        } catch (NoSuchElementException e) {
+            System.out.println("Введенны не все значения");
+        } finally {
+             //
+        }
+
 
         SkiHobby man1 = new SkiHobby();
         man1.setnYearBirthday((short) 1968);
@@ -32,7 +46,7 @@ public class Test {
         // Hobby( short nYearBirthday, int  nMonthBirthday, byte nDayBirthday, char cSkiDifficulty);
         Hobby man2 = new FishHobby((short) 1997, (int) 9, (byte) 2, 15.100f, 56.400);
 
-        Hobby aHb[] = {man1, man2, man3};
+        Hobby[] aHb = {man1, man2, man3};
 
         for (Hobby oElem : aHb) {
             System.out.println(oElem.tellAboutHobby());

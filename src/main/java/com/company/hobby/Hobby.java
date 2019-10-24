@@ -5,14 +5,26 @@ public abstract class Hobby {
     protected int  nMonthBirthday;
     protected short nYearBirthday;
 
-    public short getnYearBirthday() {        return nYearBirthday;    }
-    public void setnYearBirthday(short nYearBirthday) {        this.nYearBirthday = nYearBirthday;    }
+    public short getnYearBirthday() {
+        return nYearBirthday;
+    }
+    public void setnYearBirthday(short nYearBirthday) {
+        this.nYearBirthday = nYearBirthday;
+    }
 
-    public int getnMonthBirthday() {        return nMonthBirthday;    }
-    public void setnMonthBirthday(int nMonthBirthday) {        this.nMonthBirthday = nMonthBirthday;    }
+    public int getnMonthBirthday() {
+        return nMonthBirthday;
+    }
+    public void setnMonthBirthday(int nMonthBirthday) {
+        this.nMonthBirthday = nMonthBirthday;
+    }
 
-    public byte getnDayBirthday() {        return nDayBirthday;    }
-    public void setnDayBirthday(byte nDayBirthday) {        this.nDayBirthday = nDayBirthday;    }
+    public byte getnDayBirthday() {
+        return nDayBirthday;
+    }
+    public void setnDayBirthday(byte nDayBirthday) {
+        this.nDayBirthday = nDayBirthday;
+    }
 
     public Hobby( short nYearBirthday, int  nMonthBirthday, byte nDayBirthday)  {
         this.nMonthBirthday = nMonthBirthday;
